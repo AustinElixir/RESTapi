@@ -1,0 +1,18 @@
+{application, 'rest',
+ [{description, "An OTP HTTP Rest Application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {'rest_app', []}},
+  {applications,
+   [kernel,
+    stdlib,
+    cowboy,
+    jsx
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {contributors, []},
+  {licenses, []},
+  {links, []}
+ ]}.

@@ -1,0 +1,6 @@
+-name rest
+
+-setcookie rest_cookie
+
++K true
++A30
