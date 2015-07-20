@@ -1,25 +1,29 @@
 %%% RESTapi Records
 
 %% Employees
--record(employees, {
+-record(employee, {
 		id,			% Employee ID number
 		first,		% First Name
 		middle, 	% Middle Name
 		last,   	% Last Name
-		created,	% (epoch UTC)
-		modified	% (epoch UTC)
+		created,	% (epoch UTC) Microseconds
+		modified	% (epoch UTC) Microseconds
 	}).
 
 %% Locations
--record(locations, {
+-record(location, {
 		id,			% Location ID
-		name,		% Name of location
-		longitude,	% Longitude
-		latitude	% Latitude
+		name		% Name of location
 	}).
 
 %% el_link - used for creating associations between employees and locations
 -record(el_link, {
 		employee_id,
 		location_id
+	}).
+
+%% ids - used for tracking id numbers
+-record(id, {
+		type,
+		value
 	}).

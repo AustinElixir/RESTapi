@@ -4,3 +4,5 @@
 
 +K true
 +A30
+
+-mnesia dir '"/var/rest_db"'
