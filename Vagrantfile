@@ -69,7 +69,7 @@ Vagrant.configure(2) do |config|
     sudo apt-get clean -y
     # Install erlang
     sudo wget https://s3.amazonaws.com/rebar3/rebar3 -O /usr/bin/rebar3
-    sudo chmod u+x /usr/bin/rebar3
+    sudo chmod +x /usr/bin/rebar3
     wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb -O erlang-solutions_1.0_all.deb
     sudo dpkg -i erlang-solutions_1.0_all.deb
     rm erlang-solutions_1.0_all.deb
@@ -80,8 +80,9 @@ Vagrant.configure(2) do |config|
     export DEBIAN_FRONTEND=noninteractive
     sudo apt-get -o Dpkg::Options::="--force-confnew" dist-upgrade -y
     # Project Configuration
-    cd /vagrant/
-    git clone https://github.com/austinerlang/RESTapi
+    cd /vagrant/rest
+    rebar3 update
+    rebar3 compile
     sudo mkdir /var/rest_db -m 0777
     erl -pa _build/default/lib/*/ebin -sname rest -mnesia dir '"/var/rest_db"' -run rest_db initial_setup -s init stop
   SHELL
