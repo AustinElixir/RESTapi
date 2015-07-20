@@ -1,4 +1,4 @@
--name rest
+-sname rest
 
 -setcookie rest_cookie
 
