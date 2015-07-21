@@ -82,8 +82,10 @@ Vagrant.configure(2) do |config|
     # Project Configuration
     cd /vagrant/rest
     rebar3 update
-    rebar3 compile
+    rebar3 release
     sudo mkdir /var/rest_db -m 0777
     erl -pa _build/default/lib/*/ebin -sname rest -mnesia dir '"/var/rest_db"' -run rest_db initial_setup -s init stop
+    ls -l /var/rest_db/
+    echo "Completed"
   SHELL
 end
