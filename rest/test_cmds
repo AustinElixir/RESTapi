@@ -1,4 +1,7 @@
-rest_db:create_employee("Tommy", "M", "Carson").
+rest_db:create_employee("Johnny", "William", "Carson").
+rest_db:get_employee(Id).
+rest_db:update_employee(Id, First, Middle, Last).
+rest_db:delete_employee(Id).
 
 {ok, EmpJ} = gen_server:call(rest_api, {get_emp, 5}).
 Emp2 = jsx:decode(EmpJ, [return_maps]).
