@@ -20,9 +20,7 @@ Setup Guide
 
 Make sure you have docker [installed](https://docs.docker.com/installation/)
 
-TO DO - We are working on a docker file for this. You can test this:
-
-- `sudo docker run -it -p 8080:8080 austinerlang/restapi /bin/bash`
+- `sudo docker run -it --rm -p 8080:8080 austinerlang/restapi /bin/bash`
 
 ##### VAGRANT
 
