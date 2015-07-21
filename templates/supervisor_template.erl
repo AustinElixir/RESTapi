@@ -15,7 +15,6 @@
 %%%======================================================================
 
 %% @doc Starts the supervisor.
--spec start_link() -> {ok, pid()} | ignore | {error, term()}
 start_link() ->
     supervisor:start_link({local, ?SERVER}, ?IMPLEMENTATION_MODULE, []).
 
