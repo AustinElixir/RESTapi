@@ -191,3 +191,8 @@ respond(Req, ID, false) ->
 terminate(_Reason, _Req, _State) ->
 	ok.
 ```
+
+#### Test HTTP API Calls
+
+- `curl http://localhost:8080/get_employee/<ID>`
+- `curl -H "Content-Type: application/json" -X POST -d '{ "first": "FirstName", "middle": "MiddleName", "last": "LastName" }' http://localhost:8080/set_employee/<ID>`
