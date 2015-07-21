@@ -1,6 +1,7 @@
+rest_db:create_employee("Tommy", "M", "Carson").
+
 {ok, EmpJ} = gen_server:call(rest_api, {get_emp, 5}).
 Emp2 = jsx:decode(EmpJ, [return_maps]).
 Emp3 = maps:update(<<"first">>, <<"John">>, Emp2).
 Emp4 = jsx:encode(Emp3).
 gen_server:call(rest_api, {update_emp, 5, Emp4}).
-
