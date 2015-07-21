@@ -20,7 +20,9 @@ Setup Guide
 
 Make sure you have docker [installed](https://docs.docker.com/installation/)
 
-TO DO - We are working on a docker file for this
+TO DO - We are working on a docker file for this. You can test this:
+
+`sudo docker run -it -p 8080:8080 austinerlang/restapi /bin/bash`
 
 ##### VAGRANT
 
@@ -42,3 +44,7 @@ If the directory is empty, there is a bug with vagrant / erlang shell during pos
 - `erl -pa _build/default/lib/*/ebin -sname rest -mnesia dir '"/var/rest_db"' -run rest_db initial_setup -s init stop`
 
 Now verify the files exist in /var/rest_db.
+
+#### Tutorial
+
+Follow along with us at the meetup!!!
