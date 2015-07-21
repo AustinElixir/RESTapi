@@ -20,8 +20,7 @@ Setup Guide
 
 Make sure you have docker [installed](https://docs.docker.com/installation/)
 
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-TO DO - ADD INSTRUCTIONS FOR DOCKER
+TO DO - We are working on a docker file for this
 
 ##### VAGRANT
 
@@ -30,3 +29,16 @@ Make sure you have vagrant [installed](http://docs.vagrantup.com/v2/installation
 - `vagrant up`
 - `vagrant ssh`
 
+#### Mnesia DB
+
+Verify Mnesia built the schema files correctly.
+
+- `ls -l /var/rest_db/`
+
+If the directory is empty, there is a bug with vagrant / erlang shell during post provisioning. Manually fix:
+
+- `cd /vagrant/rest`
+- `rebar3 release`
+- `erl -pa _build/default/lib/*/ebin -sname rest -mnesia dir '"/var/rest_db"' -run rest_db initial_setup -s init stop`
+
+Now verify the files exist in /var/rest_db.
