@@ -1,0 +1,40 @@
+ <head>
+   <title>Test</title>
+   <script type="text/javascript" src="jquery.min.js"></script>
+   <script type="text/javascript" src="json2.js"></script>
+   <script type="text/javascript">
+     function post_it() {
+      $.ajax
+      ({
+          type: "POST",
+          //the url where you want to sent the userName and password to
+          url: 'http://localhost:8080/set_employee/5',
+          dataType: 'json',
+          async: false,
+          //json object to sent to the authentication url
+          // data: JSON.stringify({ "first": "FirstName", "middle" : "MiddleName", "last": "LastName" }),
+          data: checkJson($('#json_input').val()),
+          success: function () {
+              alert("Success"); 
+          }
+      }).done(function( data ) {
+                if ( console && console.log ) {
+                  console.log( data );
+                }
+              });
+     };
+
+     function checkJson(input) {
+        return JSON.stringify( JSON.parse(input) );
+     }
+   </script>
+</head>
+<body>
+  <p><textarea id="json_input" cols=80 rows=10>
+{ "first": "FirstName",
+  "middle": "MiddleName",
+  "last": "LastName" }
+  </textarea></p>
+  <p><input onclick="post_it()" type="button" name="submit" value="Send It"></p>
+</body>
+</html>

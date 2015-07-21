@@ -6,6 +6,8 @@ The intent of this project is to provide a framework to quickly build a small HT
 
 Follow these steps to complete the tutorial.
 
+Please note that we'll be doing some things you might not want in production as purely educational exercises.
+
 Setup Guide
 ===========
 #### Dowload Project Stucture
