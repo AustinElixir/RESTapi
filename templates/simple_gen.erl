@@ -1,4 +1,4 @@
--module(gen_server_template).
+-module(simple_gen).
 -behaviour(gen_server).
 
 %% API

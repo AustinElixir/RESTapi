@@ -1,4 +1,4 @@
--module(application_template).
+-module(simple_app).
 
 -behaviour(application).
 

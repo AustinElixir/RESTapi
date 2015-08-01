@@ -1,4 +1,4 @@
--module(supervisor_template).
+-module(simple_sup).
 -behaviour(supervisor).
 
 %% API
