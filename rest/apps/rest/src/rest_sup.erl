@@ -29,11 +29,7 @@ start_link() ->
 init([]) ->
     {ok, { {one_for_one, 100, 60}, [
 
-		#{ id => rest_api,
-           start => {rest_api, start_link, []},
-           restart => permanent,
-           shutdown => 1000,
-           type => worker }
+% CHILD SPEC
 
     ]} }.
 
