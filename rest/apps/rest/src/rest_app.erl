@@ -20,7 +20,8 @@ start(_StartType, _StartArgs) ->
 	    %% {HostMatch, list({PathMatch, Handler, Opts})}
 	    {'_', [
 	    	{"/get_employee/:empid", handler_emp_get, []},
-	    	{"/set_employee/:empid", handler_emp_set, []}
+	    	{"/set_employee/:empid", handler_emp_set, []},
+	    	{"/delete_employee/:empid", handler_emp_delete, []}
 	    ]}
 	]),
 	%% Name, NbAcceptors, TransOpts, ProtoOpts
